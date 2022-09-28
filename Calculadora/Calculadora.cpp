@@ -40,11 +40,11 @@ int main()
         resultado = numero1 * numero2;
     }
     else if (operacion == '/'){
-        if (numero2 != 0){
-        resultado = numero1 / numero2;
+        if (numero2 == 0){
+            return 0;
         }
-        else cout << "No se puuede dividir entre cero :(";
-        return 0;
+        else resultado = numero1 / numero2;
+        
     }
     else if (operacion == '%'){
         resultado = (int)numero1 % (int)numero2;
