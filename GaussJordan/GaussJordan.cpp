@@ -1,6 +1,5 @@
 #include <iostream>
 #include <array>
-#include <iomanip>
 
 // Añadir std para fácil llamado de funciones
 using namespace std;
@@ -81,6 +80,25 @@ No regresa ningún valor.
 template <typename matriz>
 void ImprimirSolucion(matriz & miMatriz)
 {
+    // Creamos un Array del número de filas que tenemos
+    const int variables = 3;
+    array <float, variables> Resultados = { 0 };
+    for (int i = 0; i < miMatriz.size(); i++) {
+        Resultados[i]= miMatriz[i][miMatriz.size()];
+        if (miMatriz[i][i] == 0){
+            if (miMatriz[i][miMatriz.size()] == 0){
+                cout << "\n" << "Hay infinitas soluciones";
+                return;
+            }
+            else cout << "\n" << "No hay solucion al sistema";
+            return;
+        }
+    }
+    // Imprimimos las soluciones
+    cout << "\n" << "Solución:" << "\n";
+    for (int i = 0; i < miMatriz.size(); i++) {
+        cout << "x" << i << " = " << Resultados[i] << "\n";
+    }
 
 }
 
@@ -91,28 +109,33 @@ No regresa ningún valor.
 template <typename matriz>
 void GaussJordan(matriz & miMatriz)
 {
+    // Declaramos tres variables como apoyo para la suma de filas y cambiarlas de ser necesario.
     int fila =1;
     float temp = 0;
     int sumafila = 0;
     for (int i = 0; i < miMatriz.size() ; i++) {
         fila = 1;
+        // Si nuestro pivote es 0 cambiamos las filas
         while (miMatriz[i][i] == 0 && fila < miMatriz.size()){
-            for (int j = 0; j < miMatriz.size(); j++) {
-                temp = miMatriz[j][i];
-                miMatriz[j][i] = miMatriz[j][fila];
-                miMatriz[j][fila] = temp;
+            for (int j = 0; j <= miMatriz.size(); j++) {
+                temp = miMatriz[i][j];
+                miMatriz[i][j] = miMatriz[fila][j];
+                miMatriz[fila][j] = temp;
             }
             fila ++;
         }
+        // Si todas las filas tienen pivote = 0 se pasa al siguiente pivote
         if (fila == miMatriz.size() ){
             continue;
         }
 
         temp = miMatriz[i][i];
+        // Dividimos toda la fila entre el valor del pivote
         for (int j = i; j <= miMatriz.size(); j++) {
             miMatriz[i][j] = (miMatriz[i][j]/temp);
         }
         sumafila = 0;
+        // Sumamos a cada fila para obtener ceros arriba y abajo de nuestro pivote.
         for (int j = 0; j < (miMatriz.size() - 1); j++) {
             sumafila +=1;
             temp = miMatriz[(i+sumafila) % miMatriz.size()][i];
@@ -122,14 +145,8 @@ void GaussJordan(matriz & miMatriz)
                 }
             }
 
-
         }
 
     }
-
-    for (int i = 0; i < miMatriz.size(); i++) {
-        cout<<setprecision(5)<<miMatriz[i][miMatriz.size()]<< " ";
-    }
-    ImprimirMatriz(miMatriz);
 
 }
