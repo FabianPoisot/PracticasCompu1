@@ -85,12 +85,13 @@ void ImprimirSolucion(matriz & miMatriz)
     array <float, variables> Resultados = { 0 };
     for (int i = 0; i < miMatriz.size(); i++) {
         Resultados[i]= miMatriz[i][miMatriz.size()];
+        // Revisamos si el sistema tiene infinitas soluciones o no tiene solución.
         if (miMatriz[i][i] == 0){
             if (miMatriz[i][miMatriz.size()] == 0){
                 cout << "\n" << "Hay infinitas soluciones";
                 return;
             }
-            else cout << "\n" << "No hay solucion al sistema";
+            else cout << "\n" << "No hay solución";
             return;
         }
     }
