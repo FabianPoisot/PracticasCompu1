@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 
-// Incluimos nuestro encabezado con la definición de la clase Punto2D
+// Incluimos nuestro encabezado con la definición de la clase Punto2D.
 #include "Punto.h"
 
 using namespace std;
