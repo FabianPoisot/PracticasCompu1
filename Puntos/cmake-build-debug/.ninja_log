@@ -1,0 +1,5 @@
+# ninja log v5
+1	128	6892261315537336	build.ninja	8accc9dea8117794
+5	704	6892261322768867	CMakeFiles/Puntos.dir/Puntos.cpp.obj	bf1c19c7a9047797
+0	709	6892261322819614	CMakeFiles/Puntos.dir/Punto.cpp.obj	871c14aa98612819
+709	847	6892261324157273	Puntos.exe	6cd345e47deabd47
