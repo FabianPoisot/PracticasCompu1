@@ -2,13 +2,13 @@
 // Created by Fabian on 03/11/2022.
 //
 
-#include <array>
-#include <cmath>
+
 #ifndef PUNTOS_PUNTO_H
 #define PUNTOS_PUNTO_H
 
 #include <iostream>
 #include <array>
+#include <cmath>
 
 
 class Punto2D {
