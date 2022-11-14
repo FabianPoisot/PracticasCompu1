@@ -2,11 +2,6 @@
 // Created by Fabian on 03/11/2022.
 //
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 00e0dde (Libreria math.h>)
 #ifndef PUNTOS_PUNTO_H
 #define PUNTOS_PUNTO_H
 
