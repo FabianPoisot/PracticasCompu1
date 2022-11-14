@@ -5,15 +5,14 @@
 <<<<<<< HEAD
 
 =======
-#include <array>
-#include <math.h>
+
 >>>>>>> 00e0dde (Libreria math.h>)
 #ifndef PUNTOS_PUNTO_H
 #define PUNTOS_PUNTO_H
 
 #include <iostream>
 #include <array>
-#include <cmath>
+#include <math.h>
 
 
 class Punto2D {
