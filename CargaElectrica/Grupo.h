@@ -5,7 +5,7 @@
 #ifndef CARGAELECTRICA_GRUPO_H
 #define CARGAELECTRICA_GRUPO_H
 
-#include <string>
+#include <string> 
 #include <array>
 class Grupo {
 
